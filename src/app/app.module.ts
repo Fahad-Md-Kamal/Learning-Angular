@@ -7,12 +7,14 @@ import { from } from 'rxjs';
 
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
+import { TestTwentyThreeComponent } from './test-twenty-three/test-twenty-three.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
     ServersComponent,
+    TestTwentyThreeComponent,
   ],
   imports: [
     BrowserModule,
