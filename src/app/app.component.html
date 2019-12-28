@@ -1,3 +1,28 @@
 <div class="container-fluid">
-<p>This is a damo application</p>
+    <div class="row">
+        <div class="col-xl-12">
+            <h3>Bind It!</h3>
+                <ol>
+                    <li>Create three new components: GameControl, Odd and Event</li>
+                    <li>The GameControl component should have buttons to start and stop the game</li>
+                    <li>When starting the game, an event (holding a incrementing number) should get emitted each second (ref = setInterval())</li>
+                    <li>The event should be listenable from outside the component</li>
+                    <li>When stopping the game, no more events should get emitted (clearInterval(ref))</li>
+                    <li>A new Odd component should get created for every odd number emitted, the same should happen for the Even component (on even numbers)</li>
+                    <li>Simpley output Odd - NUMBER or Even - NUMBER in the two component</li>
+                    <li>Style the element (e.g. paragraph) holding your output text differently in both component</li>
+                </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <app-odd *ngFor="let number of oddNumbers" [number]="number"></app-odd>
+            <app-even *ngFor="let number of evenNumbers" [number]="number"></app-even>
+        </div>
+    </div>
 </div>
