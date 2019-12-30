@@ -8,18 +8,18 @@
             </button>
             <br>
             <br>
-            <ul class="list-group">
+            <ul class="list-group my-2">
                 <span *ngIf="onlyOdd" >
                     All Evens
                     <li 
                         class="list-group-item"
                         [ngClass]="{odd: number % 2 !== 0}"
                         [ngStyle]="{backgroundColor: number % 2 === 0 ? 'grey' : 'green'}"
-                        *ngFor="let number of numbers"> 
+                        *ngFor="let number of evenNumbers"> 
                         {{ number }} 
                     </li>
                 </span>
-                <span *ngIf="!onlyOdd" >
+                <!-- <span *ngIf="!onlyOdd" >
                     All Odds
                     <li 
                         class="list-group-item" 
@@ -28,9 +28,42 @@
                         {{ number }} 
                     </li>
                 </span>
+                <ng-template [ngIf]="!onlyOdd">
+                        <li class="list-group-item" 
+                            *ngFor="let number of oddNumbers"
+                            [ngClass]="{odd: number % 2 !== 0}"> 
+                            {{ number }} 
+                        </li>
+                </ng-template> -->
+
+            <div *appUnless="onlyOdd">
+                All Evens
+                <li 
+                    class="list-group-item"
+                    [ngClass]="{odd: number % 2 !== 0}"
+                    [ngStyle]="{backgroundColor: number % 2 === 0 ? 'grey' : 'green'}"
+                    *ngFor="let number of oddNumbers"> 
+                    {{ number }} 
+                </li>
+            </div>
             </ul>
+
             <p appBasicHighlight>Style me with basic directive</p>
-            <p appBetterHighlight>Style me with better directive</p>
+            <!-- <p  appBetterHighlight 
+                [defaultColor]="'#808'" 
+                [highlightColor]="'#b7c'" >
+                Style me with better directive
+            </p> -->
+            <p  [appBetterHighlight] = "'#b7c'"
+                defaultColor ="#808">
+                Style me with better directive
+            </p>
+            <div [ngSwitch]="value">
+                <p *ngSwitchCase="5">Value is 5</p>
+                <p *ngSwitchCase="10">Value is 10</p>
+                <p *ngSwitchCase="100">Value is 100</p>
+                <p *ngSwithcDefault>Value is Default</p>
+            </div>
         </div>
     </div>
 </div>
