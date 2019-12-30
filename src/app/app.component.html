@@ -11,11 +11,22 @@
             <ul class="list-group">
                 <span *ngIf="onlyOdd" >
                     All Evens
-                    <li class="list-group-item" *ngFor="let number of evenNumbers"> {{ number }} </li>
+                    <li 
+                        class="list-group-item"
+                        [ngClass]="{odd: number % 2 !== 0}"
+                        [ngStyle]="{backgroundColor: number % 2 === 0 ? 'grey' : 'green'}"
+                        *ngFor="let number of numbers"> 
+                        {{ number }} 
+                    </li>
                 </span>
                 <span *ngIf="!onlyOdd" >
                     All Odds
-                    <li class="list-group-item" *ngFor="let number of oddNumbers"> {{ number }} </li>
+                    <li 
+                        class="list-group-item" 
+                        *ngFor="let number of oddNumbers"
+                        [ngClass]="{odd: number % 2 !== 0}"> 
+                        {{ number }} 
+                    </li>
                 </span>
             </ul>
         </div>
