@@ -14,14 +14,15 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-secondary" id="dropdown" ngbDropdownToggle>Manage</button>
+              <div ngbDropdownMenu aria-labelledby="dropdown+">
+                <button ngbDropdownItem>Fetch Data</button>
+                <button ngbDropdownItem>Save Data</button>
+              </div>
             </div>
+          </div>
           </li>
       </ul>
     </div>
