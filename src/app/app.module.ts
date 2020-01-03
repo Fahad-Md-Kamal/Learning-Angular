@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AccountComponent,
+    NewAccountComponent,
   ],
   imports: [
     BrowserModule,
