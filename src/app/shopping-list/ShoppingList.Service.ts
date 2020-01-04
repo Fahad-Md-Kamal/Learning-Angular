@@ -17,14 +17,17 @@ export class ShoppingListService {
         return this.ingredients.slice();
     }
 
-    addIngredients(ingredient: Ingredient) {
+    addIngredient(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
 
-    addShoppingItem() {}
+    addIngredients(ingredients: Ingredient[]) {
+        // for (let ingredient of ingredients) {
+        //     this.addIngredient(ingredient);
+        // }
 
-    deleteShoppingItem() {}
-    
-    clearShoppingItem() {}
+        this.ingredients.push(...ingredients);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+    }
 }
