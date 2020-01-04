@@ -8,9 +8,7 @@
     <div class="col-xl-12">
         <app-recipe-item 
             *ngFor="let recipeEl of recipes" 
-            [recipe]="recipeEl" 
-            (selectedRecipe) = "passedRecipe(recipeEl)">
+            [recipe]="recipeEl" >
         </app-recipe-item>
-        <!-- (selectedRecipe) = "passedRecipe($event)" -->
     </div>
 </div>
