@@ -1,19 +1,19 @@
-<div class="row">
-    <div class="col-lg-12 col-sm-4">
+<div class="row my-3">
+    <div class="col-lg-2 col-sm-4 my-5">
       <div class="list-group">
         <a
           href="#"
-          class="list-group-item"
+          class="list-group-item text-dark"
           *ngFor="let server of servers">
           {{ server.name }}
         </a>
       </div>
     </div>
 
-    <div class="col-lg-12 col-sm-4">
-      <app-edit-server></app-edit-server>
-      <hr>
+    <div class="col-lg-2 offset-lg-1 col-sm-6">
       <app-server></app-server>
+      <hr>
+      <app-edit-server></app-edit-server>
     </div>
   </div>
   
