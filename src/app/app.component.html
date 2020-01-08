@@ -2,30 +2,19 @@
     <div class="row">
         <ul class="navbar nav offset-1">
             <li class="nav-item" role="presentation">
-                <a class="nav-link text-dark" href="#">Home</a>
+                <a class="nav-link text-dark" routerLink="/" >Home</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link text-dark" href="#">Servers</a>
+                <!-- <a class="nav-link text-dark" href="/servers">Servers</a> -->
+                <a class="nav-link text-dark" routerLink="/servers" >Servers</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link text-dark" href="#">Users</a>
+                <a class="nav-link text-dark" [routerLink]="['/users']" >Users</a>
             </li>
         </ul>
     </div>
-    <div class="row">
-        <div class="col-sm-10 offset-sm-1">
-        <app-home></app-home>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-10 offset-sm-1">
-        <app-users></app-users>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-10 offset-sm-1">
-        <app-servers></app-servers>
-        </div>
+    <div class="offset-1">
+     <router-outlet></router-outlet>
     </div>
     </div>
     

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
@@ -12,6 +13,12 @@ import { ServerComponent } from './servers/server/server.component';
 import { HomeComponent } from './home/home.component';
 import { ServersService } from './servers/servers.service';
 
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent }, //localhost:4200/
+  { path: 'users', component: UsersComponent }, //localhost:4200/users
+  { path: 'servers', component: ServersComponent }, //localhost:4200/users
+];
 
 @NgModule({
   declarations: [
@@ -25,7 +32,8 @@ import { ServersService } from './servers/servers.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ ServersService ],
   bootstrap: [AppComponent]
