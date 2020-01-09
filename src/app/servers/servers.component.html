@@ -2,6 +2,9 @@
     <div class="col-lg-2 col-sm-4 my-2">
       <div class="list-group">
         <a
+          [routerLink]="['/servers', 5, 'edit']"
+          [queryParams]="{allowEdit: '1'}"
+          fragment='loading'
           href="#"
           class="list-group-item text-dark"
           *ngFor="let server of servers">
