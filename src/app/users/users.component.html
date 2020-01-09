@@ -2,6 +2,7 @@
     <div class="col-lg-2 col-sm-4 my-2">
       <div class="list-group">
         <a
+          [routerLink]="['/users', user.id, user.name]" 
           href="#"
           class="list-group-item text-dark"
           *ngFor="let user of users">
