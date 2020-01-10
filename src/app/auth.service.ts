@@ -12,8 +12,14 @@ export class AuthService {
         return promise;
     }
     
-    login() {}
+    login() {
+        this.loggedIn = true;
+        // console.log(this.loggedIn);
+    }
 
-    logOut() {}
+    logOut() {
+        this.loggedIn = false;
+        // console.log(this.loggedIn);
+    }
 
 }
