@@ -29,10 +29,3 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         }
 
 }
-
-
-
-
-// canActivate(route: import("@angular/router").ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | import("@angular/router").UrlTree | Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
-//     throw new Error("Method not implemented.");
-// }
