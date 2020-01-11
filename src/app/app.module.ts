@@ -14,8 +14,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/ShoppingList.Service';
-import { RecipeService } from './recipes/Recipes.Service';
-
+import { AppRoutingModule } from './app.routing.module';
 
 
 
@@ -34,10 +33,10 @@ import { RecipeService } from './recipes/Recipes.Service';
   imports: [
     BrowserModule,
     NgbModule,
+    AppRoutingModule
   ],
   providers: [
     ShoppingListService,
-    // RecipeService
   ],
   bootstrap: [AppComponent]
 })

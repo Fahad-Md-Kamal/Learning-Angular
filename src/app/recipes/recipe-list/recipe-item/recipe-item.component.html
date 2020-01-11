@@ -1,9 +1,9 @@
     <!-- (click)="onSelect(recipe)"  -->
-    <a  href="#" 
-    class=" text-decoration-none text-body" 
+    <a 
+    class="text-decoration-none text-body" 
     (click)="onSelect()" 
     >
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem; cursor: pointer;">
         <img [src] = "recipe.imagePath"
             class="card-img-top" 
             alt="{{ recipe.name }}">
