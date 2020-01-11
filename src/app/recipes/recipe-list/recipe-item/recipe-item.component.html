@@ -1,8 +1,6 @@
     <!-- (click)="onSelect(recipe)"  -->
-    <a 
-    class="text-decoration-none text-body" 
-    (click)="onSelect()" 
-    >
+    <a class="text-decoration-none text-body"
+        [routerLink]="[index]" >
     <div class="card" style="width: 18rem; cursor: pointer;">
         <img [src] = "recipe.imagePath"
             class="card-img-top" 
