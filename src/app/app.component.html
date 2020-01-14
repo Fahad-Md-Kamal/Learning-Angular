@@ -1,21 +1,53 @@
 <div class="container my-5">
-    <form class="col-4 offset-4">
-        <div class="form-group">
-          <label for="username">username</label>
-          <input type="text" class="form-control" id="username" placeholder="username . . . ">
+    <div class="row">
+        <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3 col-lg-4 offset-lg-3">
+            <!-- <form (ngSubmit)="onSubmit(f)" #f="ngForm"> -->
+                <form (ngSubmit)="onSubmit()" #f="ngForm">
+                <div class="form-group">
+                <label for="username">username</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="username" 
+                    placeholder="username . . . "
+                    ngModel
+                    name="username" 
+                    required 
+                    #username = "ngModel">
+                    <span class="help-block text-danger" *ngIf="!username.valid && username.touched" >Please enter an username!</span>
+                </div>
+                <button type="button" class="btn btn-info">Suggest an Username</button>
+                <div class="form-group">
+                <label for="email">email</label>
+                <input 
+                    type="email" 
+                    class="form-control" 
+                    id="email" 
+                    placeholder="useremail . . . "
+                    ngModel 
+                    name="email" 
+                    required 
+                    email 
+                    #email="ngModel">
+                    <span class="help-block text-danger" *ngIf="!email.valid && email.touched" >Please enter a valid email!</span>
+                </div>
+                <div class="form-group">
+                <label for="secret">Secret Questions</label>
+                <select 
+                    class="form-control" 
+                    id="secret" 
+                    [ngModel]="defaultQuestion"
+                    name="secret">
+                    <option value="pet">Your first Pet ?</option>
+                    <option value="teacher">Your first teacher ?</option>
+                </select>
+                </div>
+                <button 
+                    type="submit" 
+                    class="btn btn-success"
+                    [disabled]="!f.valid"
+                    >Submit</button> 
+            </form>
         </div>
-        <button type="button" class="btn btn-info">Suggest an Username</button>
-        <div class="form-group">
-          <label for="email">email</label>
-          <input type="email" class="form-control" id="email" placeholder="useremail . . . ">
-        </div>
-        <div class="form-group">
-          <label for="secret">Secret Questions</label>
-          <select class="form-control" id="secret">
-            <option>Your first Pet ?</option>
-            <option>Your first teacher ?</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-success">Submit</button>
-      </form>
+    </div>
 </div>
