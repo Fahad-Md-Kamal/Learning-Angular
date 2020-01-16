@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xl-12">
-        <form>
+        <form (ngSubmit)="onAddItem(f)" #f="ngForm">
             <div class="row">
                 <div class="col-sm-5 form-group">
                     <label for="name">Name</label>
@@ -8,7 +8,8 @@
                         type="text" 
                         id="name" 
                         class="form-control"
-                        #nameInput>
+                        name="name"
+                        ngModel>
                 </div>
                 <div class="col-sm-2 form-group">
                     <label for="number">Amount </label>
@@ -16,15 +17,15 @@
                         type="text" 
                         id="amount" 
                         class="form-control"
-                        #amountInput>
+                        name="amount" 
+                        ngModel>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-xl-12">
                     <button 
-                        type="button"
-                        class="btn btn-success"
-                        (click)="onAddItem()">
+                        type="submit"
+                        class="btn btn-success">
                         Add
                     </button>
                     <button 
