@@ -1,3 +1,41 @@
-<div class="container-fluid">
-<p>This is a damo application</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 mt-5 py-5">
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Project Name</label>
+                <input 
+                    type="text" 
+                    formControlName="projectName" 
+                    id="name" 
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    formControlName="email" 
+                    id="email" 
+                    class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="status">Project Status:</label>
+                <select 
+                    formControlName="projectStatus" 
+                    id="status" 
+                    class="form-control">
+                    <option value="stable">Stable</option>
+                    <option value="critical">Critical</option>
+                    <option value="finished">Finished</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Create Project</button>
+        </form>
+    </div>
+
+    </div>
+
+
+
 </div>
