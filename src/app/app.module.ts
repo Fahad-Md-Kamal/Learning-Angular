@@ -18,6 +18,7 @@ import { ShoppingListService } from './shopping-list/ShoppingList.Service';
 import { AppRoutingModule } from './app.routing';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RecipeService } from './recipes/Recipes.Service';
 
 
 
@@ -44,6 +45,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
   ],
   providers: [
     ShoppingListService,
+    RecipeService
   ],
   bootstrap: [AppComponent]
 })
