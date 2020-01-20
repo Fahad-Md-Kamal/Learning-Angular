@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Post } from './post.model';
+import { stringify } from 'querystring';
 
 
 @Component({
@@ -17,8 +19,9 @@ export class AppComponent implements OnInit {
     this.fetchPosts();
   }
 
-  onCreatePost(postData: {title: string; content: string}) {
-    this.http.post(
+  onCreatePost(postData: Post) {
+    this.http
+    .post<{name:string}>(
       'https://ng-complete-guide-84be5.firebaseio.com/posts.json',
        postData
     ).subscribe(responseData => {
@@ -32,18 +35,18 @@ export class AppComponent implements OnInit {
 
   private fetchPosts() {
     this.http
-      .get('https://ng-complete-guide-84be5.firebaseio.com/posts.json')
-      .pipe(map(responseData => {
-        const postsArray = [];
-        for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)){
-            postsArray.push({ ...responseData[key], id: key });
+      .get<{ [key:string]: Post }>('https://ng-complete-guide-84be5.firebaseio.com/posts.json')
+        .pipe(map(responseData => {
+          const postsArray:Post[] = [];
+          for (const key in responseData) {
+            if (responseData.hasOwnProperty(key)){
+              postsArray.push({ ...responseData[key], id: key });
+            }
           }
-        }
-        return postsArray;
-      }))
+          return postsArray;
+        }))
       .subscribe(posts => {
-      console.log(posts)
+        this.loadedPosts = posts
     });
   }
 
