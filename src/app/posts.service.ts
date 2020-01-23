@@ -41,11 +41,9 @@ export class PostsService {
         return  this.http
         .get<{ [key:string]: Post }>(
             'https://ng-complete-guide-84be5.firebaseio.com/posts.json', {
-              // 'https://ng-complete-guide-84be5.firebaseio.com/posts.json?print=pretty', {
               headers: new HttpHeaders({'Custom-Header': 'Hellow'}),
               params: searchParams,
               responseType: 'json'
-              // params: new HttpParams().set('print', 'pretty')
             })
           .pipe(
             map(responseData => {
@@ -58,7 +56,6 @@ export class PostsService {
             return postsArray;
           }),
           catchError(errorRes => {
-            // send to analytics server
             return throwError(errorRes);
           })
         );
