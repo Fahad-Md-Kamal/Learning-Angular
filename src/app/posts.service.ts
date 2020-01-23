@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Subject, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 import { Post } from './post.model';
+import { error } from 'protractor';
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
+  error = new Subject<string>();
     
     constructor(private http: HttpClient){}
 
     createAndStrorePost(title:string, content: string) {
+      
         const postData: Post = {title: title, content: content};
 
         this.http
@@ -18,7 +22,9 @@ export class PostsService {
             postData
             )
             .subscribe(responseData => {
-                console.log(responseData);
+                // console.log(responseData);
+        }, error => {
+          this.error.next(error.message);
         });
     }
 
@@ -34,7 +40,12 @@ export class PostsService {
               }
             }
             return postsArray;
-          }));
+          }),
+          catchError(errorRes => {
+            // send to analytics server
+            return throwError(errorRes);
+          })
+        );
     }
 
     deletePosts() {
