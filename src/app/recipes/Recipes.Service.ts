@@ -29,12 +29,16 @@ export class RecipeService {
 
     constructor(private slService: ShoppingListService) {}
 
+    setRecipes(recipes: Recipe[]) {
+      this.recipes = recipes;
+      this.recipeChanged.next(this.recipes.slice());
+    }
+
     getRecipes() {
         return this.recipes.slice();
     }
 
     getRecipe(index: number) {
-      // return this.recipes.slice()[index]; // this would give a copy of the object but unnecessary
       return this.recipes[index];
     }
 

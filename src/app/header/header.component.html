@@ -18,8 +18,8 @@
             <div ngbDropdown class="d-inline-block">
               <button class="btn btn-outline-secondary" id="dropdown" ngbDropdownToggle>Manage</button>
               <div ngbDropdownMenu aria-labelledby="dropdown+">
-                <button ngbDropdownItem>Fetch Data</button>
-                <button ngbDropdownItem>Save Data</button>
+                <button ngbDropdownItem (click)="onFetchData()">Fetch Data</button>
+                <button ngbDropdownItem (click)="onSaveData()">Save Data</button>
               </div>
             </div>
           </div>
