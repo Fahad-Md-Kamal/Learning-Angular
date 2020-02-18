@@ -1,0 +1,9 @@
+https://www.youtube.com/watch?v=FP7Hs8lTy1k
+
+https://github.com/highcharts/highcharts-angular
+
+https://www.highcharts.com/demo/columnrange
+
+https://material.angular.io/
+
+*** Angular and Flex-Layout must be of same version ***
