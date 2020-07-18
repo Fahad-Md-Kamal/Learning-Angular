@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,6 +10,7 @@ import { AuthService } from '../auth.service';
 })
 
 export class LoginComponent implements OnInit {
+
   loginForm: FormGroup;
 
   constructor(private authService: AuthService) { }
